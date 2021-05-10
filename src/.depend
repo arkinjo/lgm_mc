@@ -1,0 +1,33 @@
+base.o: base.cpp base.hpp
+model.o: model.cpp msa.hpp model.hpp base.hpp
+modelSeq.o: modelSeq.cpp model.hpp base.hpp msa.hpp
+PartFunc.o: PartFunc.cpp PartFunc.hpp model.hpp base.hpp msa.hpp InvertMatrix.hpp
+modelIO.o: modelIO.cpp model.hpp base.hpp msa.hpp
+modelGauge.o: modelGauge.cpp model.hpp base.hpp msa.hpp
+msa.o: msa.cpp msa.hpp
+MCseq.o: MCseq.cpp MCseq.hpp model.hpp ModSeq.hpp base.hpp msa.hpp
+OptParam.o: OptParam.cpp OptParam.hpp model.hpp base.hpp \
+  msa.hpp MCseq.hpp ModSeq.hpp PartFunc.hpp InvertMatrix.hpp AnaTraj.hpp
+checkDensity.o: checkDensity.cpp model.hpp base.hpp msa.hpp
+AnaTraj.o: AnaTraj.cpp AnaTraj.hpp model.hpp base.hpp msa.hpp MCseq.hpp
+ModSeq.o: ModSeq.cpp ModSeq.hpp base.hpp model.hpp msa.hpp
+lgm_mcsamp.o: lgm_mcsamp.cpp  msa.hpp model.hpp MCseq.hpp ModSeq.hpp OptParam.hpp
+lgm_train.o: lgm_train.cpp msa.hpp model.hpp MCseq.hpp ModSeq.hpp \
+  OptParam.hpp AnaTraj.hpp 
+lgm_trainT.o: lgm_trainT.cpp msa.hpp model.hpp \
+  MCseq.hpp ModSeq.hpp OptParam.hpp AnaTraj.hpp
+lgm_trainJ.o: lgm_trainJ.cpp msa.hpp model.hpp \
+  base.hpp  OptParam.hpp MCseq.hpp \
+  ModSeq.hpp AnaTraj.hpp PartFunc.hpp
+lgm_wldos.o: lgm_wldos.cpp  msa.hpp model.hpp MCseq.hpp ModSeq.hpp OptParam.hpp
+lgm_wlsamp.o: lgm_wlsamp.cpp msa.hpp model.hpp MCseq.hpp ModSeq.hpp OptParam.hpp
+lgm_ana.o: lgm_ana.cpp msa.hpp model.hpp MCseq.hpp ModSeq.hpp OptParam.hpp AnaTraj.hpp
+lgm_pca.o: lgm_pca.cpp msa.hpp model.hpp base.hpp MCseq.hpp ModSeq.hpp \
+  OptParam.hpp AnaTraj.hpp
+lgm_trainPLM.o: lgm_trainPLM.cpp msa.hpp \
+  model.hpp base.hpp  MCseq.hpp ModSeq.hpp \
+  OptParam.hpp PartFunc.hpp InvertMatrix.hpp AnaTraj.hpp
+lgm_anaJ.o: lgm_anaJ.cpp model.hpp base.hpp msa.hpp PartFunc.hpp
+lgm_hmmemit.o: lgm_hmmemit.cpp msa.hpp \
+  model.hpp base.hpp InvertMatrix.hpp AnaTraj.hpp
+
